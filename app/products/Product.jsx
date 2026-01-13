@@ -1,7 +1,7 @@
 export default function Product({ data }) {
   console.log(data);
-  if(data.length == 0) {
-    return <h1>No Data</h1>
+  if (Array.isArray(data)) {
+    return data.length && <h1>No Data</h1>;
   }
   return (
     <div>
