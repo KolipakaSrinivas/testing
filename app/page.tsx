@@ -1,7 +1,7 @@
-export const dynamic = "force-dynamic";
-
 async function fetchData() {
-  const res = await fetch("https://fakestoreapi.com/products");
+  const res = await fetch("https://fakestoreapi.com/products", {
+    next: { revalidate: 60 }, // ✅ ISR
+  });
 
   if (!res.ok) {
     throw new Error("Failed to fetch products");
