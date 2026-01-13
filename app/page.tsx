@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic";
+
 async function fetchData() {
   try {
     const res = await fetch("https://fakestoreapi.com/products", {
