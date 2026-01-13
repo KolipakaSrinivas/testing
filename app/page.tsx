@@ -1,5 +1,5 @@
 async function fetchData() {
-  const res = await fetch("https://fakestoreapi.com/products", {
+  const res = await fetch("https://dummyjson.com/products", {
     next: { revalidate: 60 }, // ✅ ISR
   });
 
@@ -22,7 +22,7 @@ async function fetchData() {
     throw new Error("Invalid JSON response");
   }
 
-  return data;
+  return data.products;
 }
 
 import Product from "@/app/products/Product";
