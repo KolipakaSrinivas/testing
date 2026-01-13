@@ -1,6 +1,6 @@
 async function fetchData() {
   const res = await fetch("https://dummyjson.com/products", {
-    next: { revalidate: 60 }, // ✅ ISR
+    cache:"no-cache" // ✅ ISR
   });
 
   if (!res.ok) {
